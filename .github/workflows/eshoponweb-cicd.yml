@@ -9,7 +9,7 @@ env:
   LOCATION: westeurope
   TEMPLATE-FILE: .azure/bicep/webapp.bicep
   SUBSCRIPTION-ID: 12b82021-f02d-4df1-9e79-9b5bb35c5a9e
-  WEBAPP-NAME: az400-webapp-neethu
+  WEBAPP-NAME: az400-webapp-nitz
 
 
 jobs:
@@ -82,7 +82,11 @@ jobs:
         resourceGroupName: ${{ env.RESOURCE-GROUP }}
         template: bicep-template/webapp.bicep
         parameters: 'webAppName=${{ env.WEBAPP-NAME }} location=${{ env.LOCATION }}'
-        failOnStdErr: false   
+        failOnStdErr: false
+        
+  # Sleep for 3 mins
+    - name: Sleep for 3 minutes
+      run: sleep 180s
     
     # Publish website to Azure App Service (WebApp)
     - name: Publish Website to WebApp
