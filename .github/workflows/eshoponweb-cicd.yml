@@ -85,8 +85,8 @@ jobs:
         failOnStdErr: false
         
   # Sleep for 3 mins
-    - name: Sleep for 3 minutes
-      run: sleep 180s
+    #- name: Sleep for 3 minutes
+     # run: sleep 180s
     
     # Publish website to Azure App Service (WebApp)
     - name: Publish Website to WebApp
